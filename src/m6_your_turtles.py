@@ -2,15 +2,15 @@
 Your chance to explore Loops and Turtles!
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
-         Aaron Wilkin, their colleagues, and PUT_YOUR_NAME_HERE.
+         Aaron Wilkin, their colleagues, and Abi Clayton.
 """
 ########################################################################
-# TODO: 1.
+# Done: 1.
 #   On Line 5 above, replace  PUT_YOUR_NAME_HERE  with your own name.
 ########################################################################
 
 ########################################################################
-# TODO: 2.
+# Done: 2.
 #   You should have RUN the  m5e_loopy_turtles  module and READ its code.
 #   (Do so now if you have not already done so.)
 #
@@ -28,3 +28,37 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 #   Don't forget to COMMIT-and-PUSH when you are done with this module.
 #
 ########################################################################
+import rosegraphics as rg
+window = rg.TurtleWindow()
+window.delay(20)
+
+susan = rg.SimpleTurtle('turtle')
+susan.pen = rg.Pen('green', 10)
+susan.speed = 15
+
+size = 50
+
+for k in range(10):
+    susan.draw_circle(size)
+    susan.right(36)
+
+trinidad = rg.SimpleTurtle('arrow')
+trinidad.pen = rg.Pen('blue', 5)
+trinidad.speed = 10
+
+size = 100
+
+trinidad.pen_up()
+trinidad.go_to(rg.Point(50, -250))
+trinidad.pen_down()
+
+for k in range(5):
+    trinidad.draw_regular_polygon(5,size)
+    trinidad.pen_up()
+    trinidad.left(45)
+    trinidad.forward(15)
+    trinidad.right(45)
+    trinidad.pen_down()
+    size = size - 20
+
+window.close_on_mouse_click()
